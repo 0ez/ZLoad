@@ -9,6 +9,8 @@ namespace ZLoad
     {
         public static void Download(int photoCount, string tag)
         {
+			WebClient webClient = new WebClient();
+            
 			for (int i = 0; i < photoCount; i++)
 			{
 				bool flag2 = tag == null;
@@ -58,8 +60,7 @@ namespace ZLoad
 					i--;
 					continue;
 				}
-
-				WebClient webClient = new WebClient();
+                
 				webClient.DownloadFile(hJson.file_url, path);
 				Console.WriteLine("Photo number " + (i + 1).ToString() + " is on yo disk!");
 			}
