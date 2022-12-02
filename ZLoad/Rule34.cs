@@ -48,11 +48,11 @@ namespace ZLoad
 				var definition = new
 				{
 					file_url = "",
-					hash = ""
+					image = ""
 				};
 				var hJson = JsonConvert.DeserializeAnonymousType(resultNo2, definition);
 				Directory.CreateDirectory("photos");
-				string path = "photos\\" + hJson.hash + ".png";
+				string path = "photos\\" + hJson.image;
 
 				if (File.Exists(path) || hJson.hash == "")
 				{
